@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Currency Converter</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="converter-box">
+                <h1>Currency Converter</h1>
+                
+                <!-- Popular Currencies Section -->
+                <div class="popular-currencies">
+                    <h3>Popular Currencies</h3>
+                    <div class="currency-pairs">
+                        <button class="currency-pair" data-from="INR" data-to="USD">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/us.png" alt="US Flag" class="flag">
+                            </div>
+                            <span class="pair-name">INR → USD</span>
+                            <span class="currency-names">Indian Rupee → US Dollar</span>
+                            <span class="pair-rate">1 INR = 0.013 USD</span>
+                        </button>
+                        <button class="currency-pair" data-from="USD" data-to="INR">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/us.png" alt="US Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                            </div>
+                            <span class="pair-name">USD → INR</span>
+                            <span class="currency-names">US Dollar → Indian Rupee</span>
+                            <span class="pair-rate">1 USD = 75.0 INR</span>
+                        </button>
+                        <button class="currency-pair" data-from="EUR" data-to="INR">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/eu.png" alt="EU Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                            </div>
+                            <span class="pair-name">EUR → INR</span>
+                            <span class="currency-names">Euro → Indian Rupee</span>
+                            <span class="pair-rate">1 EUR = 88.0 INR</span>
+                        </button>
+                        <button class="currency-pair" data-from="GBP" data-to="INR">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                            </div>
+                            <span class="pair-name">GBP → INR</span>
+                            <span class="currency-names">British Pound → Indian Rupee</span>
+                            <span class="pair-rate">1 GBP = 102.0 INR</span>
+                        </button>
+                        <button class="currency-pair" data-from="INR" data-to="EUR">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/eu.png" alt="EU Flag" class="flag">
+                            </div>
+                            <span class="pair-name">INR → EUR</span>
+                            <span class="currency-names">Indian Rupee → Euro</span>
+                            <span class="pair-rate">1 INR = 0.011 EUR</span>
+                        </button>
+                        <button class="currency-pair" data-from="INR" data-to="GBP">
+                            <div class="pair-flags">
+                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag" class="flag">
+                                <i class="fas fa-exchange-alt"></i>
+                                <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag">
+                            </div>
+                            <span class="pair-name">INR → GBP</span>
+                            <span class="currency-names">Indian Rupee → British Pound</span>
+                            <span class="pair-rate">1 INR = 0.0098 GBP</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="amount">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter amount" value="1">
+                    </div>
+                    <div class="from">
+                        <label for="from-currency">From</label>
+                        <div class="select-wrapper">
+                            <img src="https://flagcdn.com/w20/in.png" alt="India Flag" class="currency-flag">
+                            <select id="from-currency">
+                                <option value="INR" data-flag="in">INR - Indian Rupee</option>
+                                <option value="USD" data-flag="us">USD - US Dollar</option>
+                                <option value="EUR" data-flag="eu">EUR - Euro</option>
+                                <option value="GBP" data-flag="gb">GBP - British Pound</option>
+                                <option value="JPY" data-flag="jp">JPY - Japanese Yen</option>
+                                <option value="AUD" data-flag="au">AUD - Australian Dollar</option>
+                                <option value="CAD" data-flag="ca">CAD - Canadian Dollar</option>
+                                <option value="CNY" data-flag="cn">CNY - Chinese Yuan</option>
+                                <option value="SGD" data-flag="sg">SGD - Singapore Dollar</option>
+                                <option value="AED" data-flag="ae">AED - UAE Dirham</option>
+                                <option value="SAR" data-flag="sa">SAR - Saudi Riyal</option>
+                                <option value="CHF" data-flag="ch">CHF - Swiss Franc</option>
+                                <option value="NZD" data-flag="nz">NZD - New Zealand Dollar</option>
+                                <option value="ZAR" data-flag="za">ZAR - South African Rand</option>
+                                <option value="BRL" data-flag="br">BRL - Brazilian Real</option>
+                                <option value="RUB" data-flag="ru">RUB - Russian Ruble</option>
+                                <option value="KRW" data-flag="kr">KRW - South Korean Won</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="swap-btn">
+                        <button id="swap-btn"><i class="fas fa-exchange-alt"></i></button>
+                    </div>
+                    <div class="to">
+                        <label for="to-currency">To</label>
+                        <div class="select-wrapper">
+                            <img src="https://flagcdn.com/w20/us.png" alt="US Flag" class="currency-flag">
+                            <select id="to-currency">
+                                <option value="USD" data-flag="us">USD - US Dollar</option>
+                                <option value="INR" data-flag="in">INR - Indian Rupee</option>
+                                <option value="EUR" data-flag="eu">EUR - Euro</option>
+                                <option value="GBP" data-flag="gb">GBP - British Pound</option>
+                                <option value="JPY" data-flag="jp">JPY - Japanese Yen</option>
+                                <option value="AUD" data-flag="au">AUD - Australian Dollar</option>
+                                <option value="CAD" data-flag="ca">CAD - Canadian Dollar</option>
+                                <option value="CNY" data-flag="cn">CNY - Chinese Yuan</option>
+                                <option value="SGD" data-flag="sg">SGD - Singapore Dollar</option>
+                                <option value="AED" data-flag="ae">AED - UAE Dirham</option>
+                                <option value="SAR" data-flag="sa">SAR - Saudi Riyal</option>
+                                <option value="CHF" data-flag="ch">CHF - Swiss Franc</option>
+                                <option value="NZD" data-flag="nz">NZD - New Zealand Dollar</option>
+                                <option value="ZAR" data-flag="za">ZAR - South African Rand</option>
+                                <option value="BRL" data-flag="br">BRL - Brazilian Real</option>
+                                <option value="RUB" data-flag="ru">RUB - Russian Ruble</option>
+                                <option value="KRW" data-flag="kr">KRW - South Korean Won</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="result">
+                    <h2>Result</h2>
+                    <div class="converted-amount" id="converted-amount">1 USD = 0.85 EUR</div>
+                </div>
+                <button id="convert-btn">Convert</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="content-box">
+                <h1>About Us</h1>
+                <p>Welcome to our Currency Converter! We provide a simple and efficient way to convert between different currencies using real-time exchange rates.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast & Accurate</h3>
+                        <p>Get instant currency conversions with high accuracy</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-globe"></i>
+                        <h3>Multiple Currencies</h3>
+                        <p>Support for major world currencies</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works perfectly on all devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="content-box">
+                <h1>Contact Us</h1>
+                <div class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Your message"></textarea>
+                    </div>
+                    <button class="submit-btn">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Currency Converter</h3>
+                <p>Your trusted tool for quick and accurate currency conversions. Convert between major world currencies with ease.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> ManishTiwari@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +91 7484512453</li>
+                    <li><i class="fas fa-map-marker-alt"></i> delhi, india </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Currency Converter. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
